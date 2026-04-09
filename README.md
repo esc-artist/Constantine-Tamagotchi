@@ -5,6 +5,10 @@ PREMISE
 Constantine Tamagotchi is a behavioral contingency management system to improve consistency of study output. 
 The target behavior is studying pentesting, particularly work on labs (Hack the Box).
 
+PROMISE
+
+I, Constantine King, will only use Rewards when I have sufficient tokens, and will induce punishments as the system deems. I will only award tokens if the corresponding action of a contingecy has been completed. To these statements I give my solemn word.
+
 FUNCTION
 
 Tokens are awarded to Constantine per unit of time spent studying. Tokens are stored in ledger.txt. If Constantine, according to a particular contingency, is awarded tokens, he will a) upload video evidence of having completed the required action (ie. screen recording) b) input the awarded number of tokens into a CLI for this app in his Mac, which will push to ledger.txt. 
@@ -23,7 +27,7 @@ Spending:
 
 cigarette : 1 token
 
-15 minutes TV : 1 token
+15 minutes TV in non-social context : 1 token
 
 energy drink : 5 tokens
 
