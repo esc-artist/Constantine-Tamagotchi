@@ -1,0 +1,33 @@
+
+LEDGER
+
+CURRENT TOKENS: 10
+
+CURRENT PUNISHMENT: None
+Delivered None
+
+CONTINGENCIES
+
+EARNING:
+
+30 Minutes Study: 1
+6 Hours Cumulative Study: 10
+
+
+SPENDING:
+
+Cigarette: -1
+15 Minutes Tv: -1
+Energy Drink: -5
+Fast Food: -5
+Non-Essential Purchase <= $100: -10
+Non-Essential Purchase <= $200: -20
+Non-Essential Purchase <= 300: -30
+Non-Essential Purchase > $300: -50
+
+
+PUNISHMENT POOL:
+
+$50 To Random Charity
+
+
