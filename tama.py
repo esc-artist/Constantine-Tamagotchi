@@ -66,7 +66,7 @@ def add(num_tokens):
     history_data['history'][current] = [num_tokens, None]
     with open('history.json', 'w') as history:
         json.dump(history_data, history)
-    
+    print(f"ADDED {num_tokens} TOKENS")    
 def earn(num_tokens, reason): 
     with open('ledger.json', 'r') as ledger:
         ledger_data = json.load(ledger)
@@ -79,7 +79,7 @@ def earn(num_tokens, reason):
     history_data['history'][current] = [num_tokens, reason.lower()]
     with open('history.json', 'w') as history:
         json.dump(history_data, history)
-    
+    print(f"EARNED {num_tokens} TOKENS") 
 def subtract(num_tokens):
     with open('ledger.json', 'r') as ledger:
         ledger_data = json.load(ledger)
@@ -92,7 +92,7 @@ def subtract(num_tokens):
     history_data['history'][current] = [num_tokens, None]
     with open('history.json', 'w') as history:
         json.dump(history_data, history)
-
+    print(f"SUBTRACTED {abs(num_tokens)} TOKENS")
 def spend(num_tokens, reason):
     with open('ledger.json', 'r') as ledger:
         ledger_data = json.load(ledger)
@@ -105,6 +105,7 @@ def spend(num_tokens, reason):
     history_data['history'][current] = [num_tokens, reason.lower()]
     with open('history.json', 'w') as history:
         json.dump(history_data, history)
+    print(f"SPENT {abs(num_tokens)} TOKENS")
 
 def spin():
     with open('ledger.json', 'r') as ledger:
@@ -116,6 +117,21 @@ def spin():
     ledger_data['ledger']['punishment'][1] = punishment.lower()
     with open('ledger.json', 'w') as ledger:
         json.dump(ledger_data, ledger)
+    print(f"""
+          spinning...
+          click click click click click click click...
+          click click...
+          click.....
+          click.......
+          THE WHEEL HAS SPOKEN!
+
+          PUNISHMENT: 
+
+          {punishment.title()}
+
+          DO NOT FORGET TO UPLOAD VIDEO EVIDENCE OF PUNISHMENT !
+
+          """)
 
 def publish():
     # publish ledger
@@ -191,6 +207,7 @@ PUNISHMENT POOL:
     repo.index.commit(f'Publish {datetime.datetime.now().strftime("%m-%d-%Y %H:%M:%S")}')
     origin = repo.remote('origin')
     origin.push()
+    print("PUBLISHED.")
 
 def main():
     num_tokens, reason, do_publish, do_spin = args()
