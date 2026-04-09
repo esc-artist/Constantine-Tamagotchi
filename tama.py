@@ -1,15 +1,3 @@
-# So. I need to create something that takes my input, prases the existing github json file, and edits it according to my input.
-
-# I think the simplest way would actually be not to prompt me, which is sort of annoying, but just have flags. Like tama.py --add 5, or 
-# tama.py --spend 10, etc.
-#
-# --add <x>: add x tokens to ledger.json, add +x to history.json
-# --earn <x> <reason>: add x tokens to ledger.json, add +x and reason to history.json
-# --subtract <x>: remove x tokens from ledger.json, add -x to history.json
-# --spend <x> <reason>: remove x tokens from ledger.json, add -x and reason to history.json
-# --spin: spin the wheel of punishment (return randomly selected punishment), add to ledger.json, add to history.json
-# --publish: update ledger.txt and history.txt from ledger.json and history.json, push to github
-
 import argparse
 import json
 import datetime
@@ -193,7 +181,7 @@ PUNISHMENT POOL:
                 change_type = "spend"
             change_type = change_type.title()
             reason = change[1].title() if change[1] else "none"
-            history_contents += f"DATE: {date}\nCHANGE TYPE: {change_type}\nREASON:{reason}\n\n" 
+            history_contents += f"DATE: {date}\nCHANGE TYPE: {change_type}\nCHANGE VALUE: {change[0]}\nREASON: {reason}\n\n" 
     with open('history.txt', 'w') as history:
         history_contents = "HISTORY\n\n" + history_contents
         history.write(history_contents)
