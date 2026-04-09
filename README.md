@@ -13,24 +13,39 @@ Punishments are given to Constantine per break of contingency. Current punishmen
 CONTINGENCIES
 
 Earning:
+
 30 minutes studying : 1 token
+
 6 hours cumulative study in a day : 12 tokens
 
+
 Spending:
+
 cigarette : 1 token
+
 15 minutes TV : 1 token
+
 energy drink : 5 tokens
+
 fast food : 5 tokens
+
 non-essential purchase, <= $100 : 10 tokens
+
 non-essential purchase, <= $200 : 20 tokens
+
 non-essential purchase, <= $300 : 30 tokens
+
 non-essential purcahse, > $300 : 50 tokens
 
 Punishments:
+
 Punishment Pool (Wheel of Punishment):
     $50 to charity of public's choosing
+
 < 6 hours study in a day : Wheel of Punishment
+
 Smoke marijuana in non-social context (ie. alone) : Wheel of Punishment
+
 Drink alcohol in non-social context : Wheel of Punishment
 
 

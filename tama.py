@@ -45,7 +45,7 @@ def args():
     elif args.spend is not None:
         num_tokens, reason = args.spend
         num_tokens = int(num_tokens)
-        neg = -abs(args.subtract)
+        neg = -abs(num_tokens)
         return (neg, reason, args.publish, None)
     elif args.spin:
         return (0, None, args.publish, True)
