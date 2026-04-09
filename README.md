@@ -44,6 +44,7 @@ non-essential purcahse, > $300 : 50 tokens
 Punishments:
 
 Punishment Pool (Wheel of Punishment):
+    
     $50 to charity of public's choosing
 
     Wear embarrasing outfit, of friend's choosing, in public location, of friend's choosing
