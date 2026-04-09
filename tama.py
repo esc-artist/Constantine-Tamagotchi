@@ -48,7 +48,8 @@ def args():
     if args.add is not None:
         return (args.add, None, args.publish, None)
     elif args.subtract is not None:
-        return (args.subtract, None, args.publish, None) 
+        neg = -abs(args.subtract)
+        return (neg, None, args.publish, None) 
     elif args.earn is not None:
         num_tokens, reason = args.earn
         num_tokens = int(num_tokens)
@@ -56,7 +57,8 @@ def args():
     elif args.spend is not None:
         num_tokens, reason = args.spend
         num_tokens = int(num_tokens)
-        return (num_tokens, reason, args.publish, None)
+        neg = -abs(args.subtract)
+        return (neg, reason, args.publish, None)
     elif args.spin:
         return (0, None, args.publish, True)
     elif args.publish:
