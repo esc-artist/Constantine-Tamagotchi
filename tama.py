@@ -83,6 +83,9 @@ def earn(num_tokens, reason):
 def subtract(num_tokens):
     with open('ledger.json', 'r') as ledger:
         ledger_data = json.load(ledger)
+    if ledger_data['ledger']['tokens'] + num_tokens < 0:
+        print("Cannot complete operation: Not enough tokens.")
+        exit()
     ledger_data['ledger']['tokens'] += num_tokens
     with open('ledger.json', 'w') as ledger:
         json.dump(ledger_data, ledger)
@@ -96,6 +99,9 @@ def subtract(num_tokens):
 def spend(num_tokens, reason):
     with open('ledger.json', 'r') as ledger:
         ledger_data = json.load(ledger)
+    if ledger_data['ledger']['tokens'] + num_tokens < 0:
+        print("Cannot complete operation: Not enough tokens.")
+        exit()
     ledger_data['ledger']['tokens'] += num_tokens
     with open('ledger.json','w') as ledger:
         json.dump(ledger_data, ledger)
