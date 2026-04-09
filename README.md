@@ -7,7 +7,7 @@ The target behavior is studying pentesting, particularly work on labs (Hack the 
 
 PROMISE
 
-I, Constantine King, will only use Rewards when I have sufficient tokens, and will induce punishments as the system deems. I will only award tokens if the corresponding action of a contingecy has been completed. To these statements I give my solemn word.
+I, Constantine King, will only use Rewards when I have sufficient tokens, and will induce punishments as the system deems. I will only award tokens if the corresponding action of a contingecy has been completed.
 
 FUNCTION
 
@@ -45,6 +45,8 @@ Punishments:
 
 Punishment Pool (Wheel of Punishment):
     $50 to charity of public's choosing
+    Wear embarrasing outfit, of friend's choosing, in public location, of friend's choosing.
+    Attend full church sermon
 
 < 6 hours study in a day : Wheel of Punishment
 
