@@ -1,7 +1,7 @@
 
 LEDGER
 
-CURRENT TOKENS: 50
+CURRENT TOKENS: 0
 
 CURRENT PUNISHMENT: None
 Delivered None
@@ -17,7 +17,7 @@ EARNING:
 SPENDING:
 
 Cigarette: -1
-15 Minutes Tv: -1
+15 Minutes Tv Non-Social: -1
 Energy Drink: -5
 Fast Food: -5
 Non-Essential Purchase <= $100: -10
