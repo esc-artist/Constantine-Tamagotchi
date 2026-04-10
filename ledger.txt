@@ -10,7 +10,7 @@ CONTINGENCIES
 
 EARNING:
 
-30 Minutes Study: 1
+30 Minutes Study: x tokens per 30 minutes, where x increases by 1 per hour for continuous hour long blocks, starting at 1. Ex. 1 token for first 30 minutes, 1 token for second 30 minutes, 2 tokens for third 30 minutes, 2 tokens for fourth 30 minutes, 3 tokens for fifth 30 minutes, etc.
 6 Hours Cumulative Study: 10
 
 
@@ -31,5 +31,6 @@ PUNISHMENT POOL:
 $50 To Random Charity
 Embarassing Outfit
 Church Sermon
+Eat Vegan For A Week
 
 
