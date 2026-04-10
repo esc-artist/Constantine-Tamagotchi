@@ -1,10 +1,18 @@
 #!/usr/bin/env python3
 
+import os
 import argparse
 import json
 import datetime
 import random
 from git import Repo
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+ledger_json_path = os.path.join(SCRIPT_DIR, 'ledger.json')
+ledger_txt_path = os.path.join(SCRIPT_DIR, 'ledger.txt')
+history_json_path = os.path.join(SCRIPT_DIR, 'history.json')
+history_txt_path = os.path.join(SCRIPT_DIR, 'history.txt')
+schedule_txt_path = os.path.join(SCRIPT_DIR, 'schedule.txt')
 
 def add_hour_function(num_hours):
     tokens = 0
@@ -92,79 +100,79 @@ def args():
 def add(num_tokens, by_hour):
     if by_hour:
         num_tokens = add_hour_function(num_tokens)
-    with open('ledger.json', 'r') as ledger:
+    with open(ledger_json_path, 'r') as ledger:
         ledger_data = json.load(ledger)
     ledger_data['ledger']['tokens'] += num_tokens
-    with open('ledger.json', 'w') as ledger:
+    with open(ledger_json_path, 'w') as ledger:
         json.dump(ledger_data, ledger)
-    with open('history.json', 'r') as history:
+    with open(history_json_path, 'r') as history:
         history_data = json.load(history)
     current = datetime.datetime.now().strftime("%m-%d-%Y %H:%M:%S")
     history_data['history'][current] = [num_tokens, None]
-    with open('history.json', 'w') as history:
+    with open(history_json_path, 'w') as history:
         json.dump(history_data, history)
     print(f"ADDED {num_tokens} TOKENS")    
 def earn(num_tokens, reason, by_hour): 
     if by_hour:
         num_tokens = add_hour_function(num_tokens)
-    with open('ledger.json', 'r') as ledger:
+    with open(ledger_json_path, 'r') as ledger:
         ledger_data = json.load(ledger)
     ledger_data['ledger']['tokens'] += num_tokens
-    with open('ledger.json', 'w') as ledger:
+    with open(ledger_json_path, 'w') as ledger:
         json.dump(ledger_data, ledger)
-    with open('history.json', 'r') as history:
+    with open(history_json_path, 'r') as history:
         history_data = json.load(history)
     current = datetime.datetime.now().strftime("%m-%d-%Y %H:%M:%S")
     history_data['history'][current] = [num_tokens, reason.lower()]
-    with open('history.json', 'w') as history:
+    with open(history_json_path, 'w') as history:
         json.dump(history_data, history)
     print(f"EARNED {num_tokens} TOKENS") 
 def subtract(num_tokens, by_hour):
     if by_hour:
         num_tokens = subtract_hour_function(num_tokens)
-    with open('ledger.json', 'r') as ledger:
+    with open(ledger_json_path, 'r') as ledger:
         ledger_data = json.load(ledger)
     if ledger_data['ledger']['tokens'] + num_tokens < 0:
         print("Cannot complete operation: Not enough tokens.")
         exit()
     ledger_data['ledger']['tokens'] += num_tokens
-    with open('ledger.json', 'w') as ledger:
+    with open(ledger_json_path, 'w') as ledger:
         json.dump(ledger_data, ledger)
-    with open('history.json', 'r') as history:
+    with open(history_json_path, 'r') as history:
         history_data = json.load(history)
     current = datetime.datetime.now().strftime("%m-%d-%Y %H:%M:%S")
     history_data['history'][current] = [num_tokens, None]
-    with open('history.json', 'w') as history:
+    with open(history_json_path, 'w') as history:
         json.dump(history_data, history)
     print(f"SUBTRACTED {abs(num_tokens)} TOKENS")
 def spend(num_tokens, reason, by_hour):
     if by_hour:
         num_tokens = subtract_hour_function(num_tokens)
-    with open('ledger.json', 'r') as ledger:
+    with open(ledger_json_path, 'r') as ledger:
         ledger_data = json.load(ledger)
     if ledger_data['ledger']['tokens'] + num_tokens < 0:
         print("Cannot complete operation: Not enough tokens.")
         exit()
     ledger_data['ledger']['tokens'] += num_tokens
-    with open('ledger.json','w') as ledger:
+    with open(ledger_json_path,'w') as ledger:
         json.dump(ledger_data, ledger)
-    with open('history.json', 'r') as history:
+    with open(history_json_path, 'r') as history:
         history_data = json.load(history)
     current = datetime.datetime.now().strftime("%m-%d-%Y %H:%M:%S")
     history_data['history'][current] = [num_tokens, reason.lower()]
-    with open('history.json', 'w') as history:
+    with open(history_json_path, 'w') as history:
         json.dump(history_data, history)
     print(f"SPENT {abs(num_tokens)} TOKENS")
 
 def spin():
-    with open('ledger.json', 'r') as ledger:
+    with open(ledger_json_path, 'r') as ledger:
         ledger_data = json.load(ledger)
     punishment_pool = ledger_data['ledger']['contingencies']['punishment_pool']
     punishment = random.choice(punishment_pool)
     current = datetime.datetime.now().strftime("%m-%d-%Y %H:%M:%S")
     ledger_data['ledger']['punishment'][0] = current
     ledger_data['ledger']['punishment'][1] = punishment.lower()
-    with open('ledger.json', 'w') as ledger:
+    with open(ledger_json_path, 'w') as ledger:
         json.dump(ledger_data, ledger)
     print(f"""
           spinning...
@@ -184,7 +192,7 @@ def spin():
 
 def publish():
     # publish ledger
-    with open('ledger.json', 'r') as ledger:
+    with open(ledger_json_path, 'r') as ledger:
         ledger_data = json.load(ledger)
         tokens = ledger_data['ledger']['tokens']
         punishment = "none" if ledger_data['ledger']['punishment'][1] is None else ledger_data['ledger']['punishment'][1]
@@ -207,7 +215,7 @@ def publish():
         for punish in punishment_pool:
             punishment_contents += f"{punish.title()}\n"
 
-    with open('ledger.txt', 'w') as ledger:
+    with open(ledger_txt_path, 'w') as ledger:
         ledger_contents= f"""
 LEDGER
 
@@ -232,7 +240,7 @@ PUNISHMENT POOL:
 
 """
         ledger.write(ledger_contents)
-    with open('history.json', 'r') as history:
+    with open(history_json_path, 'r') as history:
         history_data = json.load(history)
         history_contents = ""
         for date, change in history_data['history'].items():
@@ -247,12 +255,12 @@ PUNISHMENT POOL:
             change_type = change_type.title()
             reason = change[1].title() if change[1] else "none"
             history_contents += f"DATE: {date}\nCHANGE TYPE: {change_type}\nCHANGE VALUE: {change[0]}\nREASON: {reason}\n\n" 
-    with open('history.txt', 'w') as history:
+    with open(history_txt_path, 'w') as history:
         history_contents = "HISTORY\n\n" + history_contents
         history.write(history_contents)
     ## publish on github    
-    repo = Repo('.')
-    repo.index.add(['ledger.txt','history.txt', 'schedule.txt'])
+    repo = Repo(SCRIPT_DIR)
+    repo.index.add([ledger_txt_path,history_txt_path, schedule_txt_path])
     repo.index.commit(f'Publish {datetime.datetime.now().strftime("%m-%d-%Y %H:%M:%S")}')
     origin = repo.remote('origin')
     origin.push()
