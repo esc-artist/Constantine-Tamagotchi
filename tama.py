@@ -67,11 +67,9 @@ def args():
             num_tokens = subtract_hour_function(args.subtract)
             print(f"CALCULATION: {num_tokens} TOKENS.")
             exit()
-        if not args.by_hour:
-            val = -abs(args.subtract)
         else:
-            val = args.subtract
-        return (val, None, args.publish, None, args.by_hour) 
+            neg = -(abs(args.subtract))
+        return (neg, None, args.publish, None, args.by_hour) 
     elif args.earn is not None:
         num_tokens, reason = args.earn
         num_tokens = int(num_tokens)
@@ -87,11 +85,9 @@ def args():
             num_tokens = subtract_hour_function(num_tokens)
             print(f"CALCULATION: {num_tokens} TOKENS.")
             exit()
-        if not args.by_hour:
-            val = -abs(num_tokens)
         else:
-            val = num_tokens
-        return (val, reason, args.publish, None, args.by_hour)
+            neg = -(abs(num_tokens))
+        return (neg, reason, args.publish, None, args.by_hour)
     elif args.spin:
         return (0, None, args.publish, True, False)
     elif args.publish:
@@ -129,7 +125,7 @@ def earn(num_tokens, reason, by_hour):
     print(f"EARNED {num_tokens} TOKENS") 
 def subtract(num_tokens, by_hour):
     if by_hour:
-        num_tokens = subtract_hour_function(num_tokens)
+        num_tokens = subtract_hour_function(abs(num_tokens))
     with open(ledger_json_path, 'r') as ledger:
         ledger_data = json.load(ledger)
     if ledger_data['ledger']['tokens'] + num_tokens < 0:
@@ -147,7 +143,7 @@ def subtract(num_tokens, by_hour):
     print(f"SUBTRACTED {abs(num_tokens)} TOKENS")
 def spend(num_tokens, reason, by_hour):
     if by_hour:
-        num_tokens = subtract_hour_function(num_tokens)
+        num_tokens = subtract_hour_function(abs(num_tokens))
     with open(ledger_json_path, 'r') as ledger:
         ledger_data = json.load(ledger)
     if ledger_data['ledger']['tokens'] + num_tokens < 0:
