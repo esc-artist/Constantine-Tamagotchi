@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import argparse
 import json
 import datetime
@@ -250,7 +252,7 @@ PUNISHMENT POOL:
         history.write(history_contents)
     ## publish on github    
     repo = Repo('.')
-    repo.index.add(['ledger.txt','history.txt'])
+    repo.index.add(['ledger.txt','history.txt', 'schedule.txt'])
     repo.index.commit(f'Publish {datetime.datetime.now().strftime("%m-%d-%Y %H:%M:%S")}')
     origin = repo.remote('origin')
     origin.push()
