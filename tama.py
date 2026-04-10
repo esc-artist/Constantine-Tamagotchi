@@ -219,7 +219,7 @@ def main():
     num_tokens, reason, do_publish, do_spin = args()
     if num_tokens > 0 and not reason:
         add(num_tokens)
-    elif num_tokens and reason:
+    elif num_tokens > 0 and reason:
         earn(num_tokens, reason)
     elif num_tokens < 0 and not reason:
         subtract(num_tokens)
