@@ -57,6 +57,7 @@ Smoke marijuana in non-social context (ie. alone) : Wheel of Punishment
 
 Drink alcohol in non-social context : Wheel of Punishment
 
+Non-study during scheduled block (in schedule.txt) : Wheel of Punishment
 
 
 
