@@ -4,6 +4,17 @@ import datetime
 import random
 from git import Repo
 
+def add_hour_function(num_hours):
+    tokens = 0
+    for hour in range(1, num_hours + 1):
+        tokens += hour * 2  # tokens earned every half hour increase by 1 every hour
+    return tokens
+
+def subtract_hour_function(num_hours):
+    tokens = 0
+    return -(num_hours * 4) # 1 token per 15 mins tv
+
+
 def args():
     parser = argparse.ArgumentParser(
                         prog='tama.py',
@@ -11,8 +22,9 @@ def args():
     parser.add_argument('--add', type=int, metavar=('NUM_TOKENS'))
     parser.add_argument('--subtract',type=int, metavar=('NUM_TOKENS'))
     parser.add_argument('--earn', nargs=2, metavar=('NUM_TOKENS', 'REASON'))
-    parser.add_argument('--by-hour', action='store_true')
     parser.add_argument('--spend', nargs=2, metavar=('NUM_TOKENS', 'REASON'))
+    parser.add_argument('--by-hour', action='store_true')
+    parser.add_argument('--calc', action='store_true')
     parser.add_argument('--spin', action='store_true')
     parser.add_argument('--publish', action='store_true')
 
@@ -35,8 +47,16 @@ def args():
 
 
     if args.add is not None:
+        if args.by_hour and args.calc:
+            num_tokens = add_hour_function(args.add)
+            print(f"CALCULATION: {num_tokens} TOKENS.")
+            exit()
         return (args.add, None, args.publish, None, args.by_hour)
     elif args.subtract is not None:
+        if args.by_hour and args.calc:
+            num_tokens = subtract_hour_function(args.subtract)
+            print(f"CALCULATION: {num_tokens} TOKENS.")
+            exit()
         if not args.by_hour:
             val = -abs(args.subtract)
         else:
@@ -45,10 +65,18 @@ def args():
     elif args.earn is not None:
         num_tokens, reason = args.earn
         num_tokens = int(num_tokens)
+        if args.by_hour and args.calc:
+            num_tokens = add_hour_function(num_tokens)
+            print(f"CALCULATION: {num_tokens} TOKENS.")
+            exit()
         return (num_tokens, reason, args.publish, None, args.by_hour)
     elif args.spend is not None:
         num_tokens, reason = args.spend
         num_tokens = int(num_tokens)
+        if args.by_hour and args.calc:
+            num_tokens = subtract_hour_function(num_tokens)
+            print(f"CALCULATION: {num_tokens} TOKENS.")
+            exit()
         if not args.by_hour:
             val = -abs(num_tokens)
         else:
@@ -57,18 +85,8 @@ def args():
     elif args.spin:
         return (0, None, args.publish, True, False)
     elif args.publish:
-        return (0, None, True, args.spin, False)
+        return (0, None, True, False, False)
     
-def add_hour_function(num_hours):
-    tokens = 0
-    for hour in range(1, num_hours + 1):
-        tokens += hour * 2  # tokens earned every half hour increase by 1 every hour
-    return tokens
-
-def subtract_hour_function(num_hours):
-    tokens = 0
-    return -(num_hours * 4) # 1 token per 15 mins tv
-
 def add(num_tokens, by_hour):
     if by_hour:
         num_tokens = add_hour_function(num_tokens)
@@ -249,11 +267,10 @@ def main():
     elif num_tokens < 0 and reason:
         spend(num_tokens, reason, by_hour)
     elif do_spin:
-        spin()
 
+        spin()
     if do_publish:
         publish()
-
 
 if __name__ == '__main__':
     main()
