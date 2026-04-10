@@ -18,28 +18,28 @@ CONTINGENCIES
 
 Earning:
 
-30 minutes studying : 1 token
+    30 minutes studying : 1 token
 
-6 hours cumulative study in a day : 12 tokens
+    6 hours cumulative study in a day : 12 tokens
 
 
 Spending:
 
-cigarette : 1 token
+    cigarette : 1 token
 
-15 minutes TV in non-social context : 1 token
+    15 minutes TV in non-social context : 1 token
 
-energy drink : 5 tokens
+    energy drink : 5 tokens
 
-fast food : 5 tokens
+    fast food : 5 tokens
 
-non-essential purchase, <= $100 : 10 tokens
+    non-essential purchase, <= $100 : 10 tokens
 
-non-essential purchase, <= $200 : 20 tokens
+    non-essential purchase, <= $200 : 20 tokens
 
-non-essential purchase, <= $300 : 30 tokens
+    non-essential purchase, <= $300 : 30 tokens
 
-non-essential purcahse, > $300 : 50 tokens
+    non-essential purcahse, > $300 : 50 tokens
 
 Punishments:
 
