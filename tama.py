@@ -11,6 +11,7 @@ def args():
     parser.add_argument('--add', type=int, metavar=('NUM_TOKENS'))
     parser.add_argument('--subtract',type=int, metavar=('NUM_TOKENS'))
     parser.add_argument('--earn', nargs=2, metavar=('NUM_TOKENS', 'REASON'))
+    parser.add_argument('--by-hour', action='store_true')
     parser.add_argument('--spend', nargs=2, metavar=('NUM_TOKENS', 'REASON'))
     parser.add_argument('--spin', action='store_true')
     parser.add_argument('--publish', action='store_true')
@@ -34,27 +35,43 @@ def args():
 
 
     if args.add is not None:
-        return (args.add, None, args.publish, None)
+        return (args.add, None, args.publish, None, args.by_hour)
     elif args.subtract is not None:
-        neg = -abs(args.subtract)
-        return (neg, None, args.publish, None) 
+        if not args.by_hour:
+            val = -abs(args.subtract)
+        else:
+            val = args.subtract
+        return (val, None, args.publish, None, args.by_hour) 
     elif args.earn is not None:
         num_tokens, reason = args.earn
         num_tokens = int(num_tokens)
-        return (num_tokens, reason, args.publish, None)
+        return (num_tokens, reason, args.publish, None, args.by_hour)
     elif args.spend is not None:
         num_tokens, reason = args.spend
         num_tokens = int(num_tokens)
-        neg = -abs(num_tokens)
-        return (neg, reason, args.publish, None)
+        if not args.by_hour:
+            val = -abs(num_tokens)
+        else:
+            val = num_tokens
+        return (val, reason, args.publish, None, args.by_hour)
     elif args.spin:
-        return (0, None, args.publish, True)
+        return (0, None, args.publish, True, False)
     elif args.publish:
-        return (0, None, True, args.spin)
+        return (0, None, True, args.spin, False)
     
+def add_hour_function(num_hours):
+    tokens = 0
+    for hour in range(1, num_hours + 1):
+        tokens += hour * 2  # tokens earned every half hour increase by 1 every hour
+    return tokens
 
+def subtract_hour_function(num_hours):
+    tokens = 0
+    return -(num_hours * 4) # 1 token per 15 mins tv
 
-def add(num_tokens):
+def add(num_tokens, by_hour):
+    if by_hour:
+        num_tokens = add_hour_function(num_tokens)
     with open('ledger.json', 'r') as ledger:
         ledger_data = json.load(ledger)
     ledger_data['ledger']['tokens'] += num_tokens
@@ -67,7 +84,9 @@ def add(num_tokens):
     with open('history.json', 'w') as history:
         json.dump(history_data, history)
     print(f"ADDED {num_tokens} TOKENS")    
-def earn(num_tokens, reason): 
+def earn(num_tokens, reason, by_hour): 
+    if by_hour:
+        num_tokens = add_hour_function(num_tokens)
     with open('ledger.json', 'r') as ledger:
         ledger_data = json.load(ledger)
     ledger_data['ledger']['tokens'] += num_tokens
@@ -80,7 +99,9 @@ def earn(num_tokens, reason):
     with open('history.json', 'w') as history:
         json.dump(history_data, history)
     print(f"EARNED {num_tokens} TOKENS") 
-def subtract(num_tokens):
+def subtract(num_tokens, by_hour):
+    if by_hour:
+        num_tokens = subtract_hour_function(num_tokens)
     with open('ledger.json', 'r') as ledger:
         ledger_data = json.load(ledger)
     if ledger_data['ledger']['tokens'] + num_tokens < 0:
@@ -96,7 +117,9 @@ def subtract(num_tokens):
     with open('history.json', 'w') as history:
         json.dump(history_data, history)
     print(f"SUBTRACTED {abs(num_tokens)} TOKENS")
-def spend(num_tokens, reason):
+def spend(num_tokens, reason, by_hour):
+    if by_hour:
+        num_tokens = subtract_hour_function(num_tokens)
     with open('ledger.json', 'r') as ledger:
         ledger_data = json.load(ledger)
     if ledger_data['ledger']['tokens'] + num_tokens < 0:
@@ -216,15 +239,15 @@ PUNISHMENT POOL:
     print("PUBLISHED.")
 
 def main():
-    num_tokens, reason, do_publish, do_spin = args()
+    num_tokens, reason, do_publish, do_spin, by_hour = args()
     if num_tokens > 0 and not reason:
-        add(num_tokens)
+        add(num_tokens, by_hour)
     elif num_tokens > 0 and reason:
-        earn(num_tokens, reason)
+        earn(num_tokens, reason, by_hour)
     elif num_tokens < 0 and not reason:
-        subtract(num_tokens)
+        subtract(num_tokens, by_hour)
     elif num_tokens < 0 and reason:
-        spend(num_tokens, reason)
+        spend(num_tokens, reason, by_hour)
     elif do_spin:
         spin()
 
