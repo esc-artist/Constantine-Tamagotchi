@@ -11,7 +11,7 @@ CONTINGENCIES
 EARNING:
 
 30 Minutes Study: +n tokens, where n is the number of 30 minute blocks (30m = +1, 1h = +2, 1.5 = +3
-6 Hours Cumulative Study: 10
+6 Hours Cumulative Study: 5
 
 
 SPENDING:
