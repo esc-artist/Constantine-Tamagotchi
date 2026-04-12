@@ -14,10 +14,17 @@ history_json_path = os.path.join(SCRIPT_DIR, 'history.json')
 history_txt_path = os.path.join(SCRIPT_DIR, 'history.txt')
 schedule_txt_path = os.path.join(SCRIPT_DIR, 'schedule.txt')
 
+# def add_hour_function(num_hours):
+#     tokens = 0
+#     for hour in range(1, num_hours + 1):
+#         tokens += hour * 2  # tokens earned every half hour increase by 1 every hour
+#     return tokens
+
 def add_hour_function(num_hours):
+    num_blocks = int(num_hours * 2)
     tokens = 0
-    for hour in range(1, num_hours + 1):
-        tokens += hour * 2  # tokens earned every half hour increase by 1 every hour
+    for num in range (1, num_blocks + 1):
+        tokens += num
     return tokens
 
 def subtract_hour_function(num_hours):
@@ -29,8 +36,8 @@ def args():
     parser = argparse.ArgumentParser(
                         prog='tama.py',
                         description='Constantine Tamagotchi CLI')
-    parser.add_argument('--add', type=int, metavar=('NUM_TOKENS'))
-    parser.add_argument('--subtract',type=int, metavar=('NUM_TOKENS'))
+    parser.add_argument('--add', type=float, metavar=('NUM_TOKENS'))
+    parser.add_argument('--subtract',type=float, metavar=('NUM_TOKENS'))
     parser.add_argument('--earn', nargs=2, metavar=('NUM_TOKENS', 'REASON'))
     parser.add_argument('--spend', nargs=2, metavar=('NUM_TOKENS', 'REASON'))
     parser.add_argument('--by-hour', action='store_true')
@@ -72,7 +79,7 @@ def args():
         return (neg, None, args.publish, None, args.by_hour) 
     elif args.earn is not None:
         num_tokens, reason = args.earn
-        num_tokens = int(num_tokens)
+        num_tokens = float(num_tokens)
         if args.by_hour and args.calc:
             num_tokens = add_hour_function(num_tokens)
             print(f"CALCULATION: {num_tokens} TOKENS.")
@@ -80,7 +87,7 @@ def args():
         return (num_tokens, reason, args.publish, None, args.by_hour)
     elif args.spend is not None:
         num_tokens, reason = args.spend
-        num_tokens = int(num_tokens)
+        num_tokens = float(num_tokens)
         if args.by_hour and args.calc:
             num_tokens = subtract_hour_function(num_tokens)
             print(f"CALCULATION: {num_tokens} TOKENS.")
