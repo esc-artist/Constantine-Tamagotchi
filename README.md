@@ -18,14 +18,14 @@ CONTINGENCIES
 
 Earning:
 
-    30 minutes studying : 1 token
+    30 minutes studying : +n tokens, where n is the number of 30 minute blocks (30m = +1, 1h = +2, 1.5 = +3)
 
     6 hours cumulative study in a day : 12 tokens
 
 
 Spending:
 
-    cigarette : 1 token
+    cigarette : 2 token
 
     15 minutes TV in non-social context : 1 token
 
