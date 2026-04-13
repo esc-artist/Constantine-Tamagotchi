@@ -3,8 +3,8 @@ LEDGER
 
 CURRENT TOKENS: 0.0
 
-CURRENT PUNISHMENT: None
-Delivered None
+CURRENT PUNISHMENT: $50 To Random Charity
+Delivered 04-13-2026 14:05:30
 
 CONTINGENCIES
 
@@ -24,6 +24,8 @@ Non-Essential Purchase <= $100: -10
 Non-Essential Purchase <= $200: -20
 Non-Essential Purchase <= 300: -30
 Non-Essential Purchase > $300: -50
+Joint Or Two Hits Of Pen In Social Context: -2
+One Drink In Social Context: -2
 
 
 PUNISHMENT POOL:
