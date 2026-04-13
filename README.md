@@ -41,6 +41,10 @@ Spending:
 
     non-essential purcahse, > $300 : 50 tokens
 
+    joint or two hits of pen in social context : 2 tokens
+
+    one drink in social context : 2 tokens
+
 Punishments:
 
 Punishment Pool (Wheel of Punishment):
