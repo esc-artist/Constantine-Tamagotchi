@@ -20,7 +20,7 @@ Earning:
 
     30 minutes studying : +n tokens, where n is the number of 30 minute blocks (30m = +1, 1h = +2, 1.5 = +3)
 
-    6 hours cumulative study in a day : 5 tokens
+    6 hours cumulative study in a day (6am-6am): 5 tokens
 
 
 Spending:
