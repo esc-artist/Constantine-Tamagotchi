@@ -51,6 +51,8 @@ Punishment Pool (Wheel of Punishment):
 
     Attend full church sermon
 
+    Eat vegan for a week
+
 < 6 hours study in a day : Wheel of Punishment
 
 Smoke marijuana in non-social context (ie. alone) : Wheel of Punishment
