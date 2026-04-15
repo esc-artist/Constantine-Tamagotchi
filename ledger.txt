@@ -16,7 +16,7 @@ EARNING:
 
 SPENDING:
 
-Cigarette: -2
+Cigarette In Non-Social Context: -2
 15 Minutes Tv Non-Social: -1
 Energy Drink: -5
 Fast Food: -5
