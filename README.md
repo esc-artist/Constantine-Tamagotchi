@@ -57,6 +57,8 @@ Punishment Pool (Wheel of Punishment):
 
     Eat vegan for a week
 
+Edit Constantine Tamagotchi outside editing window (Sunday 6am - Monday 6am): Wheel of Punishment
+
 < 6 hours study in a day (approx. 6am-6am) : Wheel of Punishment
 
 Smoke marijuana in non-social context (ie. alone) : Wheel of Punishment
