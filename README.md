@@ -20,7 +20,7 @@ Earning:
 
     30 minutes studying : +n tokens, where n is the number of 30 minute blocks (30m = +1, 1h = +2, 1.5 = +3)
 
-    6 hours cumulative study in a day : 5 tokens
+    6 hours cumulative study in a day (approximately 6am-6am) : 5 tokens
 
 
 Spending:
@@ -57,7 +57,7 @@ Punishment Pool (Wheel of Punishment):
 
     Eat vegan for a week
 
-< 6 hours study in a day : Wheel of Punishment
+< 6 hours study in a day (approx. 6am-6am) : Wheel of Punishment
 
 Smoke marijuana in non-social context (ie. alone) : Wheel of Punishment
 
