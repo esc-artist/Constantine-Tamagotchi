@@ -177,6 +177,11 @@ def spin():
     ledger_data['ledger']['punishment'][1] = punishment.lower()
     with open(ledger_json_path, 'w') as ledger:
         json.dump(ledger_data, ledger)
+    with open(history_json_path, 'r') as history:
+        history_data = json.load(history)
+    history_data['history'][current] = ["spin", punishment.lower()]
+    with open(history_json_path, 'w') as history:
+        json.dump(history_data, history)
     print(f"""
           spinning...
           click click click click click click click...
@@ -213,6 +218,10 @@ def publish():
             reason = contin[0]
             num_tokens = contin[1]
             spending_contents += f"{reason.title()}: {num_tokens}\n"
+        punished_actions = ledger_data['ledger']['contingencies']['punished_actions']
+        punished_actions_contents = ""
+        for action in punished_actions:
+            punished_actions_contents += f"{action.title()}\n"
         punishment_pool = ledger_data['ledger']['contingencies']['punishment_pool']
         punishment_contents = ""
         for punish in punishment_pool:
@@ -236,6 +245,10 @@ EARNING:
 SPENDING:
 
 {spending_contents}
+
+PUNISHED ACTIONS:
+
+{punished_actions_contents}
 
 PUNISHMENT POOL:
 
