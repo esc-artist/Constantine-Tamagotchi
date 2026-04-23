@@ -35,6 +35,7 @@ Non-Study During Scheduled Block (In Schedule.Txt)
 < 6 Hours Study In A Day (Approx. 6Am-6Am)
 Smoke Marijuana In Non-Social Context (Ie. Alone)
 Drink Alcohol In Non-Social Context
+Change Schedule After Day Has Started
 
 
 PUNISHMENT POOL:
