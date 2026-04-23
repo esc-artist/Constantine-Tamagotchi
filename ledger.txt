@@ -1,10 +1,10 @@
 
 LEDGER
 
-CURRENT TOKENS: 33.0
+CURRENT TOKENS: 32.0
 
-CURRENT PUNISHMENT: Eat Vegan For A Week
-Delivered 04-17-2026 11:17:15
+CURRENT PUNISHMENT: None
+Delivered None
 
 CONTINGENCIES
 
@@ -28,11 +28,22 @@ Joint Or Two Hits Of Pen In Social Context: -2
 One Drink In Social Context: -2
 
 
+PUNISHED ACTIONS:
+
+Didn'T Write Schedule For Today, Yesterday
+Non-Study During Scheduled Block (In Schedule.Txt)
+< 6 Hours Study In A Day (Approx. 6Am-6Am)
+Smoke Marijuana In Non-Social Context (Ie. Alone)
+Drink Alcohol In Non-Social Context
+
+
 PUNISHMENT POOL:
 
 $50 To Random Charity
 Embarassing Outfit
 Church Sermon
-Eat Vegan For A Week
+Eat A Bowl Of Warm Peas And Corn With No Seasoning
+Clean Someone Else'S Whole House
+Wear A Sandwich Board With Message Of Friends Choosing In Public
 
 
