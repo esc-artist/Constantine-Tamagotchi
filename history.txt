@@ -910,3 +910,8 @@ CHANGE TYPE: Earn
 CHANGE VALUE: 1.0
 REASON: Studying
 
+DATE: 04-27-2026 03:38:38
+CHANGE TYPE: Spend
+CHANGE VALUE: -40.0
+REASON: Approximately 40 Points Of Cigarettes, Alcohol, Weed, And Other Bad Decisions.
+
