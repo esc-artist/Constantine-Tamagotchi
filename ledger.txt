@@ -36,6 +36,7 @@ Non-Study During Scheduled Block (In Schedule.Txt)
 Smoke Marijuana In Non-Social Context (Ie. Alone)
 Drink Alcohol In Non-Social Context
 Change Schedule After Day Has Started
+Contingency A
 
 
 PUNISHMENT POOL:
