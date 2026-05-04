@@ -1,7 +1,7 @@
 
 LEDGER
 
-CURRENT TOKENS: 35.0
+CURRENT TOKENS: 34.0
 
 CURRENT PUNISHMENT: Embarassing Outfit
 Delivered 04-28-2026 00:48:27
@@ -30,7 +30,6 @@ One Drink In Social Context: -2
 
 PUNISHED ACTIONS:
 
-Didn'T Write Schedule For Today, Yesterday
 Non-Study During Scheduled Block (In Schedule.Txt)
 < 6 Hours Study In A Day (Approx. 6Am-6Am)
 Smoke Marijuana In Non-Social Context (Ie. Alone)
