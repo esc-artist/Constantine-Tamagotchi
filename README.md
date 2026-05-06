@@ -15,5 +15,12 @@ Tokens are awarded to Constantine per unit of time spent studying. Tokens are st
 Punishments are given to Constantine per break of contingency. Current punishments are tracked in ledger.txt. If Constantine, according to a particular contingency, is to receive a punishment, he will a) spin the Wheel of Punishment -- just a random selector among an array of punishments b) provide video/photo evidence of having received the chosen punishment
 Punishments should be discrete actions, that do not have to be sustained but instead just implemented once. This limits the opportunity to bail on a punishment, and makes it easier to record evidence of the punishment.
 
+CHANGES
+
+Changes to the system, should they be MORE restrictive (adding a spending contingency, adding a punished action), may be added at any time. Should a proposed change be LESS restrictive (removing or changing the value of a spending contingency, removing a punished action), it must undergo a 72 hour review period before being put into effect.
+
+    Proposed Changes:
+        
+
 
 
