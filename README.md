@@ -11,6 +11,7 @@ Tokens are awarded to Constantine per unit of time spent studying. Tokens are st
 Conditions:
 
 The Practitioner (Constantine King), must follow the conditions of the Tamagotchi. These conditions are as follows:
+
     a) The Tamagotchi system will not be abandoned before Constantine passes the CPTS exam. 
 
     b) The Tamagotchi system will not be changed without good reason (as determined by a Referee), and all changes to the system will be logged. Changes that make the system more restrictive (as ultimately determined by the Referee) are implemented immediately, while changes that make the system less restrictive enter into a 72-hour buffer window before implementation.
@@ -24,7 +25,7 @@ The Practitioner (Constantine King), must follow the conditions of the Tamagotch
 	f) Rewards will not be used without deduction of tokens.
 
 	g) Evidence will be presented of any received punishment within a 14 day window of the punished action. System abandonment or change does not render invalid earned punishments.
-    
+
 	h) A daily log of ongoing contingency adherence and study hours reached will be published within 24 hours of day end (48 hour window).
 
 Should any of the conditions a through h be violated, as determined by a Referee who is not the Practitioner themselves, the Root Punishment shall be triggered by the Referee within a 14 day window of the violation.
