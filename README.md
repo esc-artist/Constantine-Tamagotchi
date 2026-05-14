@@ -32,29 +32,45 @@ Should any of the conditions a through h be violated, as determined by a Referee
 
 Root Punishment:
 
-<TBD>
+~~ TBD ~~
 
 Referee Responsibilities:
 
 Once every 14 days, the Referee shall perform an audit. The audit checks the following:
-	Changes:
-		Is the system still in use— are token earnings and deductions being made with frequency?
-		Are all changes, as determined by commit history, logged by the Practitioner?
-		Is a valid explanation for the change, deemed by the Referee to be good reason, provided by the Practitioner at the time of change?
-	Evidence:
-		Is video evidence of studying presented, and does it meet the stated contingencies?
-			Primarily, is 6 hours of video evidence presented daily, and if not, was the punishment implemented?
-		Is there any indication that the video evidence of studying has been falsified (ie, no screen activity)?
-		Was evidence of punishment presented within a 14 day window of the punished action?
-		Is there any indication that evidence of punishment has been falsified?
-		Is there are any missing footage or suspect outages of the Practitioner’s residence footage?
-	Log:
-		Is a log of ongoing contingency adherence and study hours published daily within 24 hours of day end?
+	
+    Changes:
+		
+        Is the system still in use— are token earnings and deductions being made with frequency?
+		
+        Are all changes, as determined by commit history, logged by the Practitioner?
+		
+        Is a valid explanation for the change, deemed by the Referee to be good reason, provided by the Practitioner at the time of change?
+	
+    Evidence:
+		
+        Is video evidence of studying presented, and does it meet the stated contingencies?
+			
+            Primarily, is 6 hours of video evidence presented daily, and if not, was the punishment implemented?
+
+		
+        Is there any indication that the video evidence of studying has been falsified (ie, no screen activity)?
+		
+        Was evidence of punishment presented within a 14 day window of the punished action?
+		
+        Is there any indication that evidence of punishment has been falsified?
+		
+        Is there are any missing footage or suspect outages of the Practitioner’s residence footage?
+	
+    Log:
+		
+        Is a log of ongoing contingency adherence and study hours published daily within 24 hours of day end?
 		
 		
 
 Less-Restrictive Changes Buffer:
+    
     Proposed Change:
+    
     Reason:
 
 
