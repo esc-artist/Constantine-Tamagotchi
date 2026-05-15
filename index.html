@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Constantine Tamagotchi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --bg-1: #111111;
+      --bg-2: #181818;
+      --border: #222222;
+      --border-light: #2e2e2e;
+      --text: #c8c8c8;
+      --text-dim: #666666;
+      --text-dimmer: #333333;
+      --accent: #c8a96e;
+      --accent-dim: #7a6440;
+      --mono: 'IBM Plex Mono', monospace;
+      --serif: 'Instrument Serif', serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      font-weight: 300;
+      line-height: 1.7;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+      animation: fadeIn 0.4s ease;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.6rem;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    h1 span { color: var(--accent); }
+
+    .header-meta {
+      font-size: 0.7rem;
+      color: var(--text-dimmer);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-bottom: 1px;
+      animation: fadeIn 0.5s ease 0.1s both;
+    }
+
+    .grid-full {
+      grid-column: 1 / -1;
+    }
+
+    /* PANELS */
+    .panel {
+      background: var(--bg);
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-1);
+    }
+
+    .panel-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-dimmer);
+    }
+
+    .panel-label span { color: var(--accent-dim); }
+
+    .panel-toggle {
+      font-size: 0.65rem;
+      color: var(--text-dimmer);
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: var(--mono);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.15s;
+      padding: 0;
+    }
+
+    .panel-toggle:hover { color: var(--accent); }
+
+    .panel-body {
+      padding: 1.25rem 1rem;
+      flex: 1;
+    }
+
+    .panel-body.scrollable {
+      max-height: 320px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border-light) transparent;
+    }
+
+    .panel-body.scrollable::-webkit-scrollbar { width: 4px; }
+    .panel-body.scrollable::-webkit-scrollbar-track { background: transparent; }
+    .panel-body.scrollable::-webkit-scrollbar-thumb { background: var(--border-light); }
+
+    .panel-body.collapsed { display: none; }
+
+    /* README */
+    .readme-body {
+      max-height: 260px;
+    }
+
+    .readme-content {
+      white-space: pre-wrap;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      line-height: 1.7;
+    }
+
+    /* TXT FILES */
+    .txt-content {
+      white-space: pre-wrap;
+      font-size: 0.78rem;
+      color: var(--text);
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    /* LOADING / ERROR */
+    .loading {
+      color: var(--text-dimmer);
+      font-size: 0.75rem;
+      font-style: italic;
+    }
+
+    .error {
+      color: #6b3a3a;
+      font-size: 0.75rem;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 1rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 1px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      animation: fadeIn 0.5s ease 0.2s both;
+    }
+
+    footer span {
+      font-size: 0.7rem;
+      color: var(--text-dimmer);
+    }
+
+    footer a {
+      font-size: 0.7rem;
+      color: var(--accent-dim);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    footer a:hover { color: var(--accent); }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 580px) {
+      body { padding: 1rem; }
+      .grid { grid-template-columns: 1fr; }
+      .grid-full { grid-column: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1><span>//</span> Constantine Tamagotchi</h1>
+      <span class="header-meta" id="last-updated">loading...</span>
+    </header>
+
+    <div class="grid">
+      <!-- LEDGER -->
+      <div class="panel">
+        <div class="panel-header">
+          <span class="panel-label"><span>01</span> / ledger</span>
+          <button class="panel-toggle" onclick="togglePanel('ledger')">collapse</button>
+        </div>
+        <div class="panel-body scrollable" id="ledger-body">
+          <span class="loading">fetching ledger...</span>
+        </div>
+      </div>
+
+      <!-- HISTORY -->
+      <div class="panel">
+        <div class="panel-header">
+          <span class="panel-label"><span>02</span> / history</span>
+          <button class="panel-toggle" onclick="togglePanel('history')">collapse</button>
+        </div>
+        <div class="panel-body scrollable" id="history-body">
+          <span class="loading">fetching history...</span>
+        </div>
+      </div>
+
+      <!-- LOG -->
+      <div class="panel grid-full">
+        <div class="panel-header">
+          <span class="panel-label"><span>03</span> / log</span>
+          <button class="panel-toggle" onclick="togglePanel('log')">collapse</button>
+        </div>
+        <div class="panel-body scrollable" id="log-body">
+          <span class="loading">fetching log...</span>
+        </div>
+      </div>
+
+      <!-- README -->
+      <div class="panel grid-full">
+        <div class="panel-header">
+          <span class="panel-label"><span>04</span> / readme</span>
+          <button class="panel-toggle" onclick="togglePanel('readme')">collapse</button>
+        </div>
+        <div class="panel-body scrollable readme-body collapsed" id="readme-body">
+          <span class="loading">fetching readme...</span>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <span id="fetch-time"></span>
+      <a href="https://github.com/esc-artist/Constantine-Tamagotchi" target="_blank">esc-artist/Constantine-Tamagotchi ↗</a>
+    </footer>
+  </div>
+
+  <script>
+    const BASE = 'https://raw.githubusercontent.com/esc-artist/Constantine-Tamagotchi/main/';
+
+    const files = [
+      { id: 'ledger-body',  file: 'ledger.txt',  cls: 'txt-content' },
+      { id: 'history-body', file: 'history.txt', cls: 'txt-content' },
+      { id: 'log-body',     file: 'log.txt',     cls: 'txt-content' },
+      { id: 'readme-body',  file: 'README.md',   cls: 'readme-content' },
+    ];
+
+    async function fetchFile(url) {
+      const res = await fetch(url + '?nocache=' + Date.now());
+      if (!res.ok) throw new Error(`${res.status}`);
+      return res.text();
+    }
+
+    async function loadAll() {
+      const now = new Date();
+      document.getElementById('fetch-time').textContent =
+        'fetched ' + now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      document.getElementById('last-updated').textContent =
+        now.toLocaleDateString([], { weekday: 'short', month: 'short', day: 'numeric' })
+        + ' · ' + now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+      for (const { id, file, cls } of files) {
+        const el = document.getElementById(id);
+        try {
+          const text = await fetchFile(BASE + file);
+          const pre = document.createElement('pre');
+          pre.className = cls;
+          pre.textContent = text;
+          el.innerHTML = '';
+          el.appendChild(pre);
+        } catch (e) {
+          el.innerHTML = `<span class="error">could not load ${file} — ${e.message}</span>`;
+        }
+      }
+    }
+
+    function togglePanel(name) {
+      const body = document.getElementById(name + '-body');
+      const btn = body.previousElementSibling.querySelector('.panel-toggle');
+      const collapsed = body.classList.toggle('collapsed');
+      btn.textContent = collapsed ? 'expand' : 'collapse';
+    }
+
+    loadAll();
+  </script>
+</body>
+</html>
