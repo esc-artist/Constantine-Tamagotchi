@@ -6,13 +6,18 @@ import json
 import datetime
 import random
 from git import Repo
+import string
+import readline
+import regex
+import pyinputplus as pyip
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ledger_json_path = os.path.join(SCRIPT_DIR, 'ledger.json')
 ledger_txt_path = os.path.join(SCRIPT_DIR, 'ledger.txt')
 history_json_path = os.path.join(SCRIPT_DIR, 'history.json')
 history_txt_path = os.path.join(SCRIPT_DIR, 'history.txt')
-schedule_txt_path = os.path.join(SCRIPT_DIR, 'schedule.txt')
+log_json_path = os.path.join(SCRIPT_DIR, 'log.json')
+log_txt_path = os.path.join(SCRIPT_DIR, 'log.txt')
 
 # def add_hour_function(num_hours):
 #     tokens = 0
@@ -42,8 +47,9 @@ def args():
     parser.add_argument('--spend', nargs=2, metavar=('NUM_TOKENS', 'REASON'))
     parser.add_argument('--by-hour', action='store_true')
     parser.add_argument('--calc', action='store_true')
-    parser.add_argument('--spin', action='store_true')
+    parser.add_argument('--spin', nargs=1, metavar=('REASON'))
     parser.add_argument('--publish', action='store_true')
+    parser.add_argument('--log', action='store_true')
 
     args = parser.parse_args()
 
@@ -96,9 +102,12 @@ def args():
             neg = -(abs(num_tokens))
         return (neg, reason, args.publish, None, args.by_hour)
     elif args.spin:
-        return (0, None, args.publish, True, False)
+        return (0, args.spin[0], args.publish, True, False)
     elif args.publish:
         return (0, None, True, False, False)
+    elif args.log:
+        return (0, 'log', args.publish, None, args.by_hour)
+
     
 def add(num_tokens, by_hour):
     if by_hour:
@@ -167,7 +176,7 @@ def spend(num_tokens, reason, by_hour):
         json.dump(history_data, history)
     print(f"SPENT {abs(num_tokens)} TOKENS")
 
-def spin():
+def spin(reason):
     with open(ledger_json_path, 'r') as ledger:
         ledger_data = json.load(ledger)
     punishment_pool = ledger_data['ledger']['contingencies']['punishment_pool']
@@ -179,7 +188,7 @@ def spin():
         json.dump(ledger_data, ledger)
     with open(history_json_path, 'r') as history:
         history_data = json.load(history)
-    history_data['history'][current] = ["spin", punishment.lower()]
+    history_data['history'][current] = ["spin", reason.title(), punishment.lower()]
     with open(history_json_path, 'w') as history:
         json.dump(history_data, history)
     print(f"""
@@ -260,7 +269,9 @@ PUNISHMENT POOL:
         history_data = json.load(history)
         history_contents = ""
         for date, change in history_data['history'].items():
-            if change[0] > 0 and change[1] is None:
+            if type(change[0]) == str:
+                change_type = "spin"
+            elif change[0] > 0 and change[1] is None:
                 change_type = "add"
             elif change[0] > 0 and change[1] is not None:
                 change_type = "earn"
@@ -270,21 +281,78 @@ PUNISHMENT POOL:
                 change_type = "spend"
             change_type = change_type.title()
             reason = change[1].title() if change[1] else "none"
-            history_contents += f"DATE: {date}\nCHANGE TYPE: {change_type}\nCHANGE VALUE: {change[0]}\nREASON: {reason}\n\n" 
+            if len(change) == 3:
+                punishment = change[2]
+                punishment_string = f"PUNISHMENT: {punishment.title()}"
+            else:
+                punishment_string= ""
+            history_contents += f"DATE: {date}\nCHANGE TYPE: {change_type}\nCHANGE VALUE: {change[0]}\nREASON: {reason}\n{punishment_string}\n" 
     with open(history_txt_path, 'w') as history:
         history_contents = "HISTORY\n\n" + history_contents
         history.write(history_contents)
+    with open(log_json_path, 'r') as log_json:
+        log_data = json.load(log_json)
+    log_contents = ""
+    for date in log_data:
+        log_contents += date + ":\n"
+        for contingency, result in log_data[date].items():
+            log_contents += contingency.title() + ": " + str(result) + '\n'
+        log_contents += "\n"
+    with open(log_txt_path, 'w') as log:
+        log.write(log_contents)
     ## publish on github    
     repo = Repo(SCRIPT_DIR)
-    repo.index.add([ledger_txt_path,history_txt_path, schedule_txt_path])
+    repo.index.add([ledger_txt_path,history_txt_path,log_txt_path])
     repo.index.commit(f'Publish {datetime.datetime.now().strftime("%m-%d-%Y %H:%M:%S")}')
     origin = repo.remote('origin')
     origin.push()
     print("PUBLISHED.")
 
+def log():
+    print("\n========== Logging Mode ==========\n")
+    correct = False
+    while not correct:
+        print("Date?")
+        d = pyip.inputDate(">> ", formats=['%m/%d/%Y', '%m-%d-%Y', '%m/%d/%y', '%m-%d-%y', '%m/%d', '%m-%d'])
+        if d.year == 1900:
+            d = d.replace(year=datetime.date.today().year)
+        d = d.strftime('%m-%d-%Y')
+        #convert date to proper format
+        print("How many hours studying completed?")
+        hours = pyip.inputNum(">> ", min=0)
+        print("Weed OWWP (y/n)?")
+        weedowwp = pyip.inputYesNo(">> ")
+        print("Alcohol OWWP (y/n)?")
+        alcowwp = pyip.inputYesNo(">> ")
+        print("Contingency A followed (y/n)?")
+        conta = pyip.inputYesNo(">> ")
+        print("Contingency C followed (y/n)?")
+        contc = pyip.inputYesNo(">> ")
+        print("You entered the following: ")
+        print(f"Hours: {hours}")
+        print(f"Weed OWWP: {weedowwp}")
+        print(f"Alcohol OWWP: {alcowwp}")
+        print(f"Contingency A: {conta}")
+        print(f"Contingency C: {contc}")
+        print("\nIs this correct?")
+        correct_answer = pyip.inputYesNo(">> ")
+        if correct_answer == 'yes':
+            correct = True
+        elif correct_answer == 'no':
+            correct = False
+    # log in log.json
+    with open(log_json_path, 'r') as logfile:
+        log_json = json.load(logfile)
+    log_json[d] = {'hours':hours, 'weed OWWP':weedowwp, 'alcohol OWWP':alcowwp, 'contingency A':conta, 'contingency C':contc}
+    with open(log_json_path, 'w') as logfile:
+        json.dump(log_json, logfile)
+    print("\nLogged.")
+
 def main():
     num_tokens, reason, do_publish, do_spin, by_hour = args()
-    if num_tokens > 0 and not reason:
+    if reason == 'log':
+        log()
+    elif num_tokens > 0 and not reason:
         add(num_tokens, by_hour)
     elif num_tokens > 0 and reason:
         earn(num_tokens, reason, by_hour)
@@ -293,8 +361,7 @@ def main():
     elif num_tokens < 0 and reason:
         spend(num_tokens, reason, by_hour)
     elif do_spin:
-
-        spin()
+        spin(reason)
     if do_publish:
         publish()
 
