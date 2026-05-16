@@ -74,3 +74,27 @@ Less-Restrictive Changes Buffer:
     Reason:
 
 
+Intentionality Clause:
+
+It does not make sense to apply reward or punishment where the behavior in question is not under operant control. The intentionality clause is as follows: A contingency that is met/broken due to reasons that are “unintentional”, or a break of system Conditions due to reasons that are "unintentional", do not incur the consequence (reqard/punishment).
+
+An action is "unintentional" if both of the following are true:
+
+	a) The action is outside of operant control - the action would be unlikely to change regardless of reward or punishment of the practitioner.
+
+	b) The action could not have been predicted, at least not to sufficiently control for it by actions that are under operant control.
+
+As judged by the Referee.
+
+
+Examples:
+
+Oversleeping:
+	The practitioner goes out and parties all night. They oversleep and miss any time they would have had to study. Oversleeping is at least in large part biological/respondent, so you could argue that it meets condition a. But the practitioner could have predicted easily that going out would lead to oversleeping, and so check b is not passed and the intentionality clause does not apply.
+
+Emergency:
+	The practitioner is hit by a car. Being hit by a car by someone else could technically be controlled for by the practitioner by never crossing busy streets, for example. But provided the practitioner is not behaving in ways they don’t normally (being particularly reckless), they could not have reasonably predicted that they would be hit by a car. The action of being hit by a car is also outside of operant control, in that it is due to another agent, and is thus not tied to the rewards and punishments applied to the practitioner.
+
+Deliberate Harm:
+	The practitioner cuts off their arm. This prevents them from being able to study, at least temporarily. The fact that they cannot study is outside of operant control, but was directly predictable. Not cutting off one’s own arm is presumably under operant control, and the effect on studying is directly predictable, so the intentionality clause does not apply and the practitioner is punished.
+
