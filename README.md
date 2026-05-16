@@ -32,7 +32,7 @@ Should any of the conditions a through h be violated, as determined by a Referee
 
 Root Punishment:
 
-~~ TBD ~~
+Referee gets to write/dray anything they would like in the margins of a single page of Constantine's cherished, hhnd-written hand-bound notebook, The Code.
 
 Referee Responsibilities:
 
@@ -98,3 +98,6 @@ Emergency:
 Deliberate Harm:
 	The practitioner cuts off their arm. This prevents them from being able to study, at least temporarily. The fact that they cannot study is outside of operant control, but was directly predictable. Not cutting off one’s own arm is presumably under operant control, and the effect on studying is directly predictable, so the intentionality clause does not apply and the practitioner is punished.
 
+
+Forgetting:
+	Forgetting is at least to some extent not under operant control. People can't help but to forget. But there is also a file line, and frequent forgetting suggests something operant is at play, or at the very least, forgetting can be predicted or prevented. So, at the Referee's discrention, some instances of forgetting are excused by the Intentionality Clause, where as patterns or repeated forgetting are not.
