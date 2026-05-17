@@ -1,4 +1,4 @@
-Constantine Tamagotchi - 1.2 - Official start date TBD. Likely by 5/19.
+Constantine Tamagotchi - 1.2 - Official start date TBD. Still waiting on saftey deposit box to store root punishment item.
 
 Premise:
 
