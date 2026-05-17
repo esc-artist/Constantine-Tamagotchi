@@ -1,4 +1,4 @@
-Constantine Tamagotchi - 1.2 - To be implemented 5/16
+Constantine Tamagotchi - 1.2 - Official start date TBD. Likely by 5/19.
 
 Premise:
 
@@ -12,15 +12,15 @@ Conditions:
 
 The Practitioner (Constantine King), must follow the conditions of the Tamagotchi. These conditions are as follows:
 
-    a) The Tamagotchi system will not be abandoned before Constantine passes the CPTS exam. 
+	a) The Tamagotchi system will not be abandoned before Constantine passes the CPTS exam. 
 
-    b) The Tamagotchi system will not be changed without good reason (as determined by a Referee), and all changes to the system will be logged. Changes that make the system more restrictive (as ultimately determined by the Referee) are implemented immediately, while changes that make the system less restrictive enter into a 72-hour buffer window before implementation.
+	b) The Tamagotchi system will not be changed without good reason (as determined by a Referee), and all changes to the system will be logged. Changes that make the system more restrictive (as ultimately determined by the Referee) are implemented immediately, while changes that make the system less restrictive enter into a 72-hour buffer window before implementation.
 
-    c) Evidence, for example logs, study evidence, and punishment evidence, will not be falsified. The Referee may audit the Practitioner’s camera footage and bank statements if falsification is suspected.
+	c) Evidence, for example logs, study evidence, and punishment evidence, will not be falsified. The Referee may audit the Practitioner’s camera footage and bank statements if falsification is suspected.
 
-    d) The Practitioner’s residence will be under 24/7 camera surveillance. Excepting power outages and technical failures, the Practitioner must get Referee permission to disable/pause cameras.
+	d) The Practitioner’s residence will be under 24/7 camera surveillance. Excepting power outages and technical failures, the Practitioner must get Referee permission to disable/pause cameras.
 
-    e) Tokens will not be added or deducted unless in adherence with a stated contingency.
+	e) Tokens will not be added or deducted unless in adherence with a stated contingency.
 
 	f) Rewards will not be used without deduction of tokens.
 
@@ -32,7 +32,7 @@ Should any of the conditions a through h be violated, as determined by a Referee
 
 Root Punishment:
 
-Referee gets to write/dray anything they would like in the margins of a single page of Constantine's cherished, hhnd-written hand-bound notebook, The Code.
+Referee destroys Constantine's prized signed Two Headed Dreams print, on which Constantine's first tattoo is based.
 
 Referee Responsibilities:
 
