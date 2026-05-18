@@ -1,4 +1,4 @@
-Constantine Tamagotchi - 1.2 - Official start date TBD. Still waiting on saftey deposit box to store root punishment item.
+Constantine Tamagotchi - 1.2 - Offical launch date 5/18/26
 
 Premise:
 
@@ -30,9 +30,13 @@ The Practitioner (Constantine King), must follow the conditions of the Tamagotch
 
 Should any of the conditions a through h be violated, as determined by a Referee who is not the Practitioner themselves, the Root Punishment shall be triggered by the Referee within a 14 day window of the violation.
 
-Root Punishment:
+Root Punishments:
 
-Referee destroys Constantine's prized signed Two Headed Dreams print, on which Constantine's first tattoo is based.
+1) Referee destroys Constantine's prized signed Two Headed Dreams print, on which Constantine's first tattoo is based.
+	To do: waiting on lock box for poster, for which the Referee will have the only keys.
+2) An "X" will be placed in the checkbox underneath Constantine's tattoo, a commitment to this system (likely a url to the repo, but officially TBD)
+	To do: Get tattoo.
+
 
 Referee Responsibilities:
 
