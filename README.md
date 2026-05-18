@@ -33,7 +33,7 @@ Should any of the conditions a through h be violated, as determined by a Referee
 Root Punishments:
 
 1) Referee destroys Constantine's prized signed Two Headed Dreams print, on which Constantine's first tattoo is based.
-	To do: waiting on lock box for poster, for which the Referee will have the only keys.
+	To do: waiting to buy lock box for poster, for which the Referee will have the only keys.
 2) An "X" will be placed in the checkbox underneath Constantine's tattoo, a commitment to this system (likely a url to the repo, but officially TBD)
 	To do: Get tattoo.
 
