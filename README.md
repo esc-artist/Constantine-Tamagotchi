@@ -1,4 +1,5 @@
-Constantine Tamagotchi - 1.2 - Offical launch date 5/18/26
+Constantine Tamagotchi - 1.2 - Offical launch date TBD:w
+
 
 Premise:
 
