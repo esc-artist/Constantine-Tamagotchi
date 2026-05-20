@@ -1,4 +1,9 @@
-Constantine Tamagotchi - 1.2 - Offical launch date TBD:w
+Constantine Tamagotchi - 1.2 - Active as of 5/20/26
+
+TO DO:
+Purchase Raspberry Pi and 4 TB hard drive, to set up continuous recording
+Purchase lock box for poster
+Get tattoo
 
 
 Premise:
@@ -19,7 +24,7 @@ The Practitioner (Constantine King), must follow the conditions of the Tamagotch
 
 	c) Evidence, for example logs, study evidence, and punishment evidence, will not be falsified. The Referee may audit the Practitioner’s camera footage and bank statements if falsification is suspected.
 
-	d) The Practitioner’s residence will be under 24/7 camera surveillance. Excepting power outages and technical failures, the Practitioner must get Referee permission to disable/pause cameras.
+	d) The Practitioner’s residence will be under 24/7 camera surveillance. Excepting power outages and technical failures, the Practitioner must get Referee permission to disable/pause cameras.*
 
 	e) Tokens will not be added or deducted unless in adherence with a stated contingency.
 
@@ -31,12 +36,22 @@ The Practitioner (Constantine King), must follow the conditions of the Tamagotch
 
 Should any of the conditions a through h be violated, as determined by a Referee who is not the Practitioner themselves, the Root Punishment shall be triggered by the Referee within a 14 day window of the violation.
 
+*Note that condition d is not active until cameras have been fully set up. Currently saving for equipment purchase.
+
 Root Punishments:
 
-1) Referee destroys Constantine's prized signed Two Headed Dreams print, on which Constantine's first tattoo is based.
-	To do: waiting to buy lock box for poster, for which the Referee will have the only keys.
-2) An "X" will be placed in the checkbox underneath Constantine's tattoo, a commitment to this system (likely a url to the repo, but officially TBD)
-	To do: Get tattoo.
+	Temporary root punishment:
+		
+		Referee gets control of Constantine's instagrm for a week and can post whatever they like.
+
+	Eventual punishments, after TO DOs:
+
+		1) Referee destroys Constantine's prized signed Two Headed Dreams print, on which Constantine's first tattoo is based.
+			To do: waiting to buy lock box for poster, for which the Referee will have the only keys.
+
+		2) An "X" will be placed in the checkbox underneath Constantine's tattoo, a commitment to this system (likely a url to the repo, but officially TBD)
+
+			To do: Get tattoo.
 
 
 Referee Responsibilities:
@@ -57,7 +72,6 @@ Once every 14 days, the Referee shall perform an audit. The audit checks the fol
 			
             Primarily, is 6 hours of video evidence presented daily, and if not, was the punishment implemented?
 
-		
         Is there any indication that the video evidence of studying has been falsified (ie, no screen activity)?
 		
         Was evidence of punishment presented within a 14 day window of the punished action?
