@@ -1,4 +1,4 @@
-Constantine Tamagotchi - 1.2 - Active as of 5/20/26
+Constantine Tamagotchi - 1.2 - Broke again. Need to wait for root punishment and cameras to start.
 
 TO DO:
 Purchase Raspberry Pi and 4 TB hard drive, to set up continuous recording
