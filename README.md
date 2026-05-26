@@ -18,7 +18,7 @@ Conditions:
 
 The Practitioner (Constantine King), must follow the conditions of the Tamagotchi. These conditions are as follows:
 
-	a) The Tamagotchi system will not be abandoned before Constantine passes the CPTS exam. 
+	a) The Tamagotchi system will not be abandoned until Constantine passes the CPTS exam. If done for good reason, the system may be abandoned after passing the CPTS exam. The first week of every odd-numbered month will be taken off from the system. None of the conditions or contingencies of the system apply during these breaks. A week break is also awarded after each passed exam.
 
 	b) The Tamagotchi system will not be changed without good reason (as determined by a Referee), and all changes to the system will be logged. Changes that make the system more restrictive (as ultimately determined by the Referee) are implemented immediately, while changes that make the system less restrictive enter into a 72-hour buffer window before implementation.
 
