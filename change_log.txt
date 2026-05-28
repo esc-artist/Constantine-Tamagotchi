@@ -1,0 +1,7 @@
+CHANGE LOG
+
+Format:
+DATE: MM-DD-YYYY
+CHANGE: description
+REASON: explanation
+RESTRICTIVENESS: more/less
