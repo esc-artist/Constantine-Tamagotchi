@@ -1,9 +1,4 @@
-Constantine Tamagotchi - 1.2 - Broke again. Need to wait for root punishment and cameras to start.
-
-TO DO:
-Purchase Raspberry Pi and 4 TB hard drive, to set up continuous recording
-Purchase lock box for poster
-Get tattoo
+Constantine Tamagotchi - 1.2 - ACTIVE
 
 
 Premise:
@@ -20,7 +15,7 @@ The Practitioner (Constantine King), must follow the conditions of the Tamagotch
 
 	a) The Tamagotchi system will not be abandoned until Constantine passes the CPTS exam. If done for good reason, the system may be abandoned after passing the CPTS exam. The first week of every odd-numbered month will be taken off from the system. None of the conditions or contingencies of the system apply during these breaks. A week break is also awarded after each passed exam.
 
-	b) The Tamagotchi system will not be changed without good reason (as determined by a Referee), and all changes to the system will be logged. Changes that make the system more restrictive (as ultimately determined by the Referee) are implemented immediately, while changes that make the system less restrictive enter into a 72-hour buffer window before implementation.
+	b) The Tamagotchi system will not be changed without good reason (as determined by a Referee), and all changes to the system will be logged see change_log.txt). Changes that make the system more restrictive (as ultimately determined by the Referee) are implemented immediately, while changes that make the system less restrictive enter into a 72-hour buffer window before implementation.
 
 	c) Evidence, for example logs, study evidence, and punishment evidence, will not be falsified. The Referee may audit the Practitioner’s camera footage and bank statements if falsification is suspected.
 
@@ -36,23 +31,9 @@ The Practitioner (Constantine King), must follow the conditions of the Tamagotch
 
 Should any of the conditions a through h be violated, as determined by a Referee who is not the Practitioner themselves, the Root Punishment shall be triggered by the Referee within a 14 day window of the violation.
 
-*Note that condition d is not active until cameras have been fully set up. Currently saving for equipment purchase.
-
 Root Punishments:
 
-	Temporary root punishment:
-		
-		Referee gets control of Constantine's instagrm for a week and can post whatever they like.
-
-	Eventual punishments, after TO DOs:
-
-		1) Referee destroys Constantine's prized signed Two Headed Dreams print, on which Constantine's first tattoo is based.
-			To do: waiting to buy lock box for poster, for which the Referee will have the only keys.
-
-		2) An "X" will be placed in the checkbox underneath Constantine's tattoo, a commitment to this system (likely a url to the repo, but officially TBD)
-
-			To do: Get tattoo.
-
+	Constantine has placed a prized newsclipping he owns in a locked box, and given the Referee the key. The referee is to destroy this clipping.
 
 Referee Responsibilities:
 
@@ -83,15 +64,26 @@ Once every 14 days, the Referee shall perform an audit. The audit checks the fol
     Log:
 		
         Is a log of ongoing contingency adherence and study hours published daily within 24 hours of day end?
-		
-		
 
-Less-Restrictive Changes Buffer:
-    
-    Proposed Change:
-    
-    Reason:
 
+Practitioner Responsibilities:
+
+	Log tokens earned with tama.py CLI
+	
+	Log tokens spent with tama.py CLI
+	
+	Log contingency adeherence daily (by 9am following day)
+
+	Spin Wheel of Punishment in tama.py CLI when contingencies are violated
+
+	Upload evidence of punishment within 2 weeks of recieving punishment
+
+	Log any changes made to the system to change_log.txt
+
+	Give locked root punishment box to referee if conditions are violated
+
+	
+		
 
 Intentionality Clause:
 
