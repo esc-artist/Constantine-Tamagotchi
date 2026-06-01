@@ -22,3 +22,10 @@ Alcohol Owwp: yes
 Contingency A: yes
 Contingency C: yes
 
+05-31-2026:
+Hours: 6
+Weed Owwp: yes
+Alcohol Owwp: yes
+Contingency A: yes
+Contingency C: yes
+
