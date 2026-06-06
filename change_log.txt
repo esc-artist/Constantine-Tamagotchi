@@ -5,3 +5,8 @@ DATE: MM-DD-YYYY
 CHANGE: description
 REASON: explanation
 RESTRICTIVENESS: more/less
+
+DATE: 06-05-2026
+CHANGE: Removing logging daily hours and contingency following from Conditions.
+REASON: Everything is logged already automatically, and manual logging creates unnecessary overhead and is easily forgotten. It shouldn't break the system if logging doesn't occur.
+RESTRICTIVENESS: less
